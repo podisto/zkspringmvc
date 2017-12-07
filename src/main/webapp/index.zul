@@ -1,0 +1,8 @@
+<zk xmlns:n="native">
+	<window>
+		<hbox>
+			<n:a href="login">Login</n:a>
+			<n:a href="register">Register</n:a>
+		</hbox>
+	</window>
+</zk>
