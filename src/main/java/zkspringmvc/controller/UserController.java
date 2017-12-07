@@ -39,6 +39,12 @@ public class UserController {
 		return "test";
 	}
 	
+	@RequestMapping(value = "/adduser", method = RequestMethod.GET)
+	public String showFormUser(Model model) {
+		return "usercrud";
+	}
+	
+	
 	private boolean isLogged(HttpSession session) {
 		return session.getAttribute("logged") != null;
 	}

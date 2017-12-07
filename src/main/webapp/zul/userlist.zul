@@ -1,8 +1,25 @@
+<!-- Latest compiled and minified CSS -->
+<?link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" ?>
+<!-- Latest compiled and minified JavaScript -->
+<?script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ?>
+<?link rel="stylesheet" type="text/css" href="/resources/css/style.css"?>
 <zk>
-	<window id="myWin" title="User List" border="normal"
+	<borderlayout hflex="1" vflex="1">
+		<north height="100px" border="none" >
+			<include src="banner.zul"/>
+		</north>
+		<west width="260px" border="none" collapsible="true" splittable="true" minsize="300">
+			<include src="sidebar.zul"/>
+		</west>
+		<center id="mainContent" autoscroll="true">
+			<window id="myWin" title="User List" border="none" width="100%"
 		apply="org.zkoss.bind.BindComposer"
 		viewModel="@id('vm') @init('zkspringmvc.zk.UserViewModel')">
 		
+		<hbox>
+			<button zclass="btn btn-primary" label="Nouveau" href="/users/adduser" />
+		</hbox>
+		<separator spacing="10px" />
 		<listbox id="listbox" model="@bind(vm.userList)">
 			<listhead>
 				<listheader label="Name" />
@@ -21,4 +38,9 @@
 		</listbox>
 		
 	</window>
+		</center>
+		<south height="50px" border="none">
+			<include src="footer.zul"/>
+		</south>
+	</borderlayout>
 </zk>

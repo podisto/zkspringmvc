@@ -14,18 +14,18 @@
 							<rows>
 								<row>
 									Account :
-									<textbox id="account" width="200px" />
+									<textbox name="username" width="200px" />
 								</row>
 								<row>
 									Password :
-									<textbox id="password"
+									<textbox name="password"
 										type="password" width="200px" />
 								</row>
 							</rows>
 						</grid>
 						<label id="message" sclass="warn"
 							value="&#160;" />
-						<button id="login" label="Login" />
+						<button type="submit" label="Connexion" />
 					</n:form>
 				</vbox>
 			</window>

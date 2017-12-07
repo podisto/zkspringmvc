@@ -1,0 +1,84 @@
+<?link rel="stylesheet" type="text/css" href="/resources/css/style.css"?>
+<zk>
+	<borderlayout hflex="1" vflex="1">
+		<north height="100px" border="none">
+			<include src="banner.zul" />
+		</north>
+		<west width="260px" border="none" collapsible="true"
+			splittable="true" minsize="300">
+			<include src="sidebar.zul" />
+		</west>
+		<center id="mainContent" autoscroll="true">
+			<window title="User List" border="normal"
+				apply="org.zkoss.bind.BindComposer"
+				viewModel="@id('vm') @init('zkspringmvc.zk.UserViewModel')" width="100%">
+				<caption src="/imgs/profile.png" sclass="fn-caption"
+					label="Profile (MVVM)" />
+				<vlayout>
+					<grid width="500px"
+						>
+						<columns>
+							<column align="right" hflex="min" />
+							<column />
+						</columns>
+						<rows>
+							<row>
+								<cell sclass="row-title">
+									Account :
+								</cell>
+								<cell>
+									<label  />
+								</cell>
+							</row>
+							<row>
+								<cell sclass="row-title">
+									Full Name :
+								</cell>
+								<cell>
+									<textbox 
+										width="200px"
+										 />
+								</cell>
+							</row>
+							<row>
+								<cell sclass="row-title">Email :</cell>
+								<cell>
+									<textbox
+										width="200px"
+										 />
+								</cell>
+							</row>
+							<row>
+								<cell sclass="row-title">
+									Birthday :
+								</cell>
+								<cell>
+									<datebox 
+										width="200px" />
+								</cell>
+							</row>
+							
+						
+							<row>
+								<cell sclass="row-title">Bio :</cell>
+								<cell>
+									<textbox 
+										multiline="true" hflex="1" height="200px" />
+								</cell>
+							</row>
+						</rows>
+					</grid>
+				
+					<hlayout>
+						<button onClick="@command('save')" label="Save" />
+						<button onClick="@command('reload')"
+							label="Reload" />
+					</hlayout>
+				</vlayout>
+			</window>
+		</center>
+		<south height="40px" border="none">
+			<include src="footer.zul" />
+		</south>
+	</borderlayout>
+</zk>
