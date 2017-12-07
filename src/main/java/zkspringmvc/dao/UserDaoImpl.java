@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -18,19 +19,25 @@ public class UserDaoImpl implements UserDao {
 
 	public void register(User user) {
 		// TODO Auto-generated method stub
-		String sql = "insert into cm_user values(?,?,?,?,?,?,?)";
+		String sql = "insert into users values(?,?,?,?,?,?,?)";
 		jdbcTemplate.update(sql, new Object[] { user.getUsername(), user.getPassword(), user.getFirstname(),
 				user.getLastname(), user.getEmail(), user.getAddress(), user.getPhone() });
 	}
 
 	public User validateUser(Login login) {
-		String sql = "select * from cm_user where username='" + login.getUsername() + "' and password='"
+		String sql = "select * from users where username='" + login.getUsername() + "' and password='"
 				+ login.getPassword() + "'";
 		
 		List<User> users = jdbcTemplate.query(sql, new UserMapper());
 		
 		return users.size() > 0 ? users.get(0) : null;
 	}
+
+	public List<User> findAll() {
+		List<User> users = jdbcTemplate.query("select * from users", new BeanPropertyRowMapper<User>(User.class));
+		return users;
+	}
+	
 }
 
 class UserMapper implements RowMapper<User> {

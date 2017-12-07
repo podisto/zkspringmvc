@@ -1,0 +1,24 @@
+<zk>
+	<window id="myWin" title="User List" border="normal"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('zkspringmvc.zk.UserViewModel')">
+		
+		<listbox id="listbox" model="@bind(vm.userList)">
+			<listhead>
+				<listheader label="Name" />
+				<listheader label="Email" />
+				<listheader label="Adress" />
+				<listheader label="Username" />
+			</listhead>
+			<template name="model" var="user">
+				<listitem>
+					<listcell label="@bind(user.firstname)" />
+					<listcell label="@bind(user.email)" />
+					<listcell label="@bind(user.address)" />
+					<listcell label="@bind(user.username)" />
+				</listitem>
+			</template>
+		</listbox>
+		
+	</window>
+</zk>

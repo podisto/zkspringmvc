@@ -1,0 +1,6 @@
+<?page title="Test" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="normal">
+<label>Hello from ${appname}!</label>
+</window>
+</zk>
