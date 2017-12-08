@@ -9,7 +9,12 @@ import org.zkoss.zk.ui.Executions;
 
 import zkspringmvc.domain.User;
 
-public class UserViewModel {
+/**
+ * Responsible for show users list
+ * @author podisto
+ *
+ */
+public class UserListViewModel {
 	
 	private List<User> userList = null;
 	
@@ -20,10 +25,5 @@ public class UserViewModel {
 
 	public List<User> getUserList() {
 		return userList;
-	}
-	
-	@Command("addUser")
-	public void addUser() {
-		Executions.sendRedirect("usercrud.zul");
 	}
 }

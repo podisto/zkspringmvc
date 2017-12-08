@@ -14,7 +14,7 @@
 		<center id="mainContent" autoscroll="true">
 			<window id="myWin" title="User List" border="none" width="100%"
 		apply="org.zkoss.bind.BindComposer"
-		viewModel="@id('vm') @init('zkspringmvc.zk.UserViewModel')">
+		viewModel="@id('vm') @init('zkspringmvc.zk.UserListViewModel')">
 		
 		<hbox>
 			<button zclass="btn btn-primary" label="Nouveau" href="/users/adduser" />

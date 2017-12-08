@@ -2,6 +2,7 @@ package zkspringmvc.domain;
 
 public class User {
 
+	private Integer id;
 	private String username;
 	private String password;
 	private String firstname;
@@ -9,6 +10,14 @@ public class User {
 	private String email;
 	private String address;
 	private int phone;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getUsername() {
 		return username;
@@ -68,9 +77,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", firstname=" + firstname + ", lastname="
-				+ lastname + ", email=" + email + ", address=" + address + ", phone=" + phone + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", firstname=" + firstname
+				+ ", lastname=" + lastname + ", email=" + email + ", address=" + address + ", phone=" + phone + "]";
 	}
-	
-	
+
 }

@@ -14,80 +14,91 @@
 			<include src="sidebar.zul" />
 		</west>
 		<center id="mainContent" autoscroll="true">
-			<window border="normal" 
-				apply="org.zkoss.bind.BindComposer"
-				viewModel="@id('vm') @init('zkspringmvc.zk.UserViewModel')" width="100%">
+			<window border="normal" apply="org.zkoss.bind.BindComposer"
+				viewModel="@id('vm') @init('zkspringmvc.zk.UserCRUDViewModel')"
+				width="100%">
 				<caption sclass="fn-caption" iconSclass="z-icon-user"
 					label="Informations Personnelles" />
 				<vlayout>
-					<n:div class="form-horizontal">
-						<grid width="500px"
-						>
-						<columns>
-							<column align="right" hflex="min" />
-							<column />
-						</columns>
-						<rows>
-							<row>
-								<cell sclass="row-title">
-									<n:label for="firstname" class="control-label">Nom</n:label>
-								</cell>
-								<cell>
-									<textbox id="firstname" focus="true" class="form-control"
-										width="100%"
-										 />
-								</cell>
-							</row>
-							<row>
-								<cell sclass="row-title">
-									<n:label for="lastname" class="control-label">Prénom</n:label>
-								</cell>
-								<cell>
-									<textbox id="lastname" class="form-control"
-										width="100%"
-										 />
-								</cell>
-							</row>
-							<row>
-								<cell sclass="row-title">Email :</cell>
-								<cell>
-									<textbox class="form-control"
-										width="100%"
-										 />
-								</cell>
-							</row>
-							<row>
-								<cell sclass="row-title">Nom d'utilisateur :</cell>
-								<cell>
-									<textbox class="form-control"
-										width="100%"
-										 />
-								</cell>
-							</row>
-							<row>
-								<cell sclass="row-title">Mot de Passe :</cell>
-								<cell>
-									<textbox type="password" class="form-control"
-										width="100%"
-										 />
-								</cell>
-							</row>
-							<row>
-								<cell sclass="row-title">Adresse :</cell>
-								<cell>
-									<textbox class="form-control"
-										width="100%"
-										 />
-								</cell>
-							</row>
-							
-						</rows>
-					</grid>
-					</n:div>
-				
+					<n:form class="form-horizontal" action="registerProcess" method="post">
+						<grid width="500px">
+							<columns>
+								<column align="right" hflex="min" />
+								<column />
+							</columns>
+							<rows>
+								<row>
+									<cell sclass="row-title">
+										<n:label for="firstname"
+											class="control-label">
+											Nom
+										</n:label>
+									</cell>
+									<cell>
+										<textbox id="firstname"
+											focus="true" name="firstname" class="form-control" width="100%" />
+									</cell>
+								</row>
+								<row>
+									<cell sclass="row-title">
+										<n:label for="lastname"
+											class="control-label">
+											Prénom
+										</n:label>
+									</cell>
+									<cell>
+										<textbox id="lastname"
+											class="form-control" width="100%" />
+									</cell>
+								</row>
+								<row>
+									<cell sclass="row-title">
+										Email :
+									</cell>
+									<cell>
+										<textbox class="form-control"
+											width="100%" />
+									</cell>
+								</row>
+								<row>
+									<cell sclass="row-title">
+										Nom d'utilisateur :
+									</cell>
+									<cell>
+										<textbox class="form-control"
+											width="100%" />
+									</cell>
+								</row>
+								<row>
+									<cell sclass="row-title">
+										Mot de Passe :
+									</cell>
+									<cell>
+										<textbox type="password"
+											class="form-control" width="100%" />
+									</cell>
+								</row>
+								<row>
+									<cell sclass="row-title">
+										Adresse :
+									</cell>
+									<cell>
+										<textbox class="form-control"
+											width="100%" />
+									</cell>
+								</row>
+
+							</rows>
+						</grid>
+					</n:form>
+
 					<hlayout>
-						<button zclass="btn btn-default" onClick="@command('saveUser', action=0)" label="Enregistrer et Fermer" />
-						<button zclass="btn btn-default" onClick="@command('saveUser', action=1)" label="Enregistrer et Ajouter Nouveau" />
+						<button zclass="btn btn-default"
+							onClick="@command('saveUser', action=0)"
+							label="Enregistrer et Fermer" />
+						<button zclass="btn btn-default"
+							onClick="@command('saveUser', action=1)"
+							label="Enregistrer et Ajouter Nouveau" />
 						<button zclass="btn btn-danger" label="Annuler" />
 					</hlayout>
 				</vlayout>

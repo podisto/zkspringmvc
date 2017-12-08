@@ -23,8 +23,8 @@ public class UserDaoImpl implements UserDao {
 
 	public void register(User user) {
 		// TODO Auto-generated method stub
-		String sql = "insert into users values(?,?,?,?,?,?,?)";
-		jdbcTemplate.update(sql, new Object[] { user.getUsername(), user.getPassword(), user.getFirstname(),
+		String sql = "insert into users values(?,?,?,?,?,?,?,?)";
+		jdbcTemplate.update(sql, new Object[] { user.getId(), user.getUsername(), user.getPassword(), user.getFirstname(),
 				user.getLastname(), user.getEmail(), user.getAddress(), user.getPhone() });
 	}
 

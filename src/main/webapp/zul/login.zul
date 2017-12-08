@@ -5,7 +5,7 @@
 			<window id="loginWin" title="Login with you name"
 				border="normal" hflex="min">
 				<vbox hflex="min" align="center">
-					<n:form action="loginProcess" method="POST">
+					<n:form action="loginProcess" method="post">
 						<grid hflex="min">
 							<columns>
 								<column hflex="min" align="right" />
