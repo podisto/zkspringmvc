@@ -13,6 +13,7 @@
 		<junit.version>4.12</junit.version>
 		<servlet.version>3.1.0</servlet.version>
 		<mysql.connector.version>5.1.9</mysql.connector.version>
+		<jackson.version>2.9.2</jackson.version>
 	</properties>
 	<packaging>war</packaging>
 	<name>The zkspringmvc Project</name>
@@ -124,6 +125,13 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.connector.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
