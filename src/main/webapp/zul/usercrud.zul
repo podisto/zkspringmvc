@@ -1,5 +1,10 @@
+<!-- Latest compiled and minified CSS -->
+<?link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" ?>
+<!-- Latest compiled and minified JavaScript -->
+<?script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ?>
+<?page title="ComFish - Ajout Utilisateur" contentType="text/html"?>
 <?link rel="stylesheet" type="text/css" href="/resources/css/style.css"?>
-<zk>
+<zk xmlns:n="native">
 	<borderlayout hflex="1" vflex="1">
 		<north height="100px" border="none">
 			<include src="banner.zul" />
@@ -9,13 +14,14 @@
 			<include src="sidebar.zul" />
 		</west>
 		<center id="mainContent" autoscroll="true">
-			<window title="User List" border="normal"
+			<window border="normal" 
 				apply="org.zkoss.bind.BindComposer"
 				viewModel="@id('vm') @init('zkspringmvc.zk.UserViewModel')" width="100%">
-				<caption src="/imgs/profile.png" sclass="fn-caption"
-					label="Profile (MVVM)" />
+				<caption sclass="fn-caption" iconSclass="z-icon-user"
+					label="Informations Personnelles" />
 				<vlayout>
-					<grid width="500px"
+					<n:div class="form-horizontal">
+						<grid width="500px"
 						>
 						<columns>
 							<column align="right" hflex="min" />
@@ -24,55 +30,65 @@
 						<rows>
 							<row>
 								<cell sclass="row-title">
-									Account :
+									<n:label for="firstname" class="control-label">Nom</n:label>
 								</cell>
 								<cell>
-									<label  />
+									<textbox id="firstname" focus="true" class="form-control"
+										width="100%"
+										 />
 								</cell>
 							</row>
 							<row>
 								<cell sclass="row-title">
-									Full Name :
+									<n:label for="lastname" class="control-label">Prénom</n:label>
 								</cell>
 								<cell>
-									<textbox 
-										width="200px"
+									<textbox id="lastname" class="form-control"
+										width="100%"
 										 />
 								</cell>
 							</row>
 							<row>
 								<cell sclass="row-title">Email :</cell>
 								<cell>
-									<textbox
-										width="200px"
+									<textbox class="form-control"
+										width="100%"
 										 />
 								</cell>
 							</row>
 							<row>
-								<cell sclass="row-title">
-									Birthday :
-								</cell>
+								<cell sclass="row-title">Nom d'utilisateur :</cell>
 								<cell>
-									<datebox 
-										width="200px" />
+									<textbox class="form-control"
+										width="100%"
+										 />
+								</cell>
+							</row>
+							<row>
+								<cell sclass="row-title">Mot de Passe :</cell>
+								<cell>
+									<textbox type="password" class="form-control"
+										width="100%"
+										 />
+								</cell>
+							</row>
+							<row>
+								<cell sclass="row-title">Adresse :</cell>
+								<cell>
+									<textbox class="form-control"
+										width="100%"
+										 />
 								</cell>
 							</row>
 							
-						
-							<row>
-								<cell sclass="row-title">Bio :</cell>
-								<cell>
-									<textbox 
-										multiline="true" hflex="1" height="200px" />
-								</cell>
-							</row>
 						</rows>
 					</grid>
+					</n:div>
 				
 					<hlayout>
-						<button onClick="@command('save')" label="Save" />
-						<button onClick="@command('reload')"
-							label="Reload" />
+						<button zclass="btn btn-default" onClick="@command('save')" label="Enregistrer et Ajouter Nouveau" />
+						<button zclass="btn btn-default" label="Enregistrer et Fermer" />
+						<button zclass="btn btn-danger" label="Annuler" />
 					</hlayout>
 				</vlayout>
 			</window>
