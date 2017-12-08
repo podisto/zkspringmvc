@@ -5,7 +5,7 @@
 <?page title="ComFish - Ajout Utilisateur" contentType="text/html"?>
 <?link rel="stylesheet" type="text/css" href="/resources/css/style.css"?>
 <zk xmlns:n="native">
-	<borderlayout hflex="1" vflex="1">
+	<borderlayout hflex="1" vflex="1" width="100%">
 		<north height="100px" border="none">
 			<include src="banner.zul" />
 		</north>
@@ -86,8 +86,8 @@
 					</n:div>
 				
 					<hlayout>
-						<button zclass="btn btn-default" onClick="@command('save')" label="Enregistrer et Ajouter Nouveau" />
-						<button zclass="btn btn-default" label="Enregistrer et Fermer" />
+						<button zclass="btn btn-default" onClick="@command('saveUser', action=0)" label="Enregistrer et Fermer" />
+						<button zclass="btn btn-default" onClick="@command('saveUser', action=1)" label="Enregistrer et Ajouter Nouveau" />
 						<button zclass="btn btn-danger" label="Annuler" />
 					</hlayout>
 				</vlayout>

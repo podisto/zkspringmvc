@@ -9,7 +9,7 @@ import zkspringmvc.dao.UserDao;
 import zkspringmvc.domain.Login;
 import zkspringmvc.domain.User;
 
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
